@@ -1,0 +1,23 @@
+<mat-tab-group class="h-100" [selectedIndex]="getSelected().value"
+               (selectedIndexChange)="getSelected().setValue($event)">
+  <mat-tab *ngFor="let tab of getTabs(); let index = index" [label]="tab.title">
+    <div class="h-100 overflow-hidden p-3" *ngIf="tab.type == 'hello'">
+      <person-table></person-table>
+    </div>
+    <div *ngIf="tab.type == 'AddPerson'">
+      <add-person></add-person>
+    </div>
+    <div *ngIf="tab.type == 'UpdatePerson'">
+      <person></person>
+    </div>
+    <div *ngIf="tab.type == 'Incoming'">
+      <incoming-document></incoming-document>
+    </div>
+    <div *ngIf="tab.type == 'Outgoing'">
+      <outgoing-document></outgoing-document>
+    </div>
+    <div *ngIf="tab.type == 'Task'">
+      <task-document></task-document>
+    </div>
+  </mat-tab>
+</mat-tab-group>

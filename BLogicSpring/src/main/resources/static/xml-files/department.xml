@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<departments>
+    <department>
+        <id>1</id>
+        <name lang="en">Department 1</name>
+        <shortName>Dep1</shortName>
+        <leader>
+            <id>13</id>
+            <lastName lang="en">Семенова</lastName>
+            <firstName>Анастасия</firstName>
+            <patronymic>Владимировна</patronymic>
+            <post>
+                <id>3</id>
+                <name>Программист</name>
+            </post>
+            <birthDay>1979-10-21T00:00:00</birthDay>
+            <phone>+79999999999</phone>
+        </leader>
+        <phoneNumbers>numbers1, numbers2, numbers3</phoneNumbers>
+    </department>
+    <department>
+        <id>2</id>
+        <name lang="en">Department 2</name>
+        <shortName>Dep2</shortName>
+        <leader>
+            <id>14</id>
+            <lastName lang="en">Васильев</lastName>
+            <firstName>Руслан</firstName>
+            <patronymic>Дмитриевич</patronymic>
+            <post>
+                <id>4</id>
+                <name>Техник</name>
+            </post>
+            <birthDay>1979-11-21T00:00:00</birthDay>
+            <phone>+79999999999</phone>
+        </leader>
+        <phoneNumbers>numbers1, numbers2, numbers3</phoneNumbers>
+    </department>
+    <department>
+        <id>3</id>
+        <name lang="en">Department 3</name>
+        <shortName>Dep3</shortName>
+        <leader>
+            <id>15</id>
+            <lastName lang="en">Астахов</lastName>
+            <firstName>Степан</firstName>
+            <patronymic>Михайлович</patronymic>
+            <post>
+                <id>5</id>
+                <name>Младший программист</name>
+            </post>
+            <birthDay>1979-12-21T00:00:00</birthDay>
+            <phone>+79999999999</phone>
+        </leader>
+        <phoneNumbers>numbers1, numbers2, numbers3</phoneNumbers>
+    </department>
+</departments>

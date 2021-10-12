@@ -1,0 +1,60 @@
+<div class="row justify-content-start col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8 mt-3">
+  <div class="col-5 col-sm-5 col-md-5 col-lg-3 col-xl-3">
+    <button (click)="closeTab()" type="button" class="btn btn-primary w-100 close-tab">Закрыть</button>
+  </div>
+  <div class="col-5 col-sm-5 col-md-5 col-lg-3 col-xl-3">
+    <button (click)="savePerson()" [disabled]="lastName.invalid || firstName.invalid || patronymic.invalid || post.invalid || birthDay.invalid || phone.invalid" type="button" class="btn btn-success w-100">Добавить</button>
+  </div>
+</div>
+<hr class="mt-3">
+<div class="row justify-content-center mx-0">
+  <h2 class="mt-1 mb-4 text-center">Сотрудник</h2>
+  <div class="col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8 text-center">
+    <form id="editPerson${person.id}" method="post">
+      <div class="row justify-content-center mb-2">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-2">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Фамилия</mat-label>
+            <input type="text" name="lastName" matInput [(ngModel)]="person.lastName" #lastName="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-2">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Имя</mat-label>
+            <input type="text" name="firstName" matInput [(ngModel)]="person.firstName" #firstName="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Отчество</mat-label>
+            <input type="text" name="patronymic" matInput [(ngModel)]="person.patronymic" #patronymic="ngModel" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-2">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Должность</mat-label>
+            <mat-select name="post" [(ngModel)]="person.post" [compareWith]="objectComparisonFunction" #post="ngModel" required>
+              <mat-option *ngFor="let post of posts" [value]="post">
+                {{post.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-2">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Дата рождения</mat-label>
+            <input type="date" name="birthDay" matInput [(ngModel)]="person.birthDay" #birthDay="ngModel" required>
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-4">
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Номер телефона</mat-label>
+            <input type="tel" name="phone" matInput [(ngModel)]="person.phone" #phone="ngModel" required>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

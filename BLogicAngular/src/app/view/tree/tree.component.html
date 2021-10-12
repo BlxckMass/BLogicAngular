@@ -1,0 +1,18 @@
+<mat-tree [dataSource]="getDataSource()" [treeControl]="getTreeControl()">
+  <mat-tree-node style="cursor: pointer" (click)="tabService.addTabForNodeType(node.item.tabId, node.item.nodeName, node.item.type)" *matTreeNodeDef="let node" matTreeNodePadding>
+    <button mat-icon-button disabled></button>
+    {{node.item.nodeName}}
+  </mat-tree-node>
+  <mat-tree-node style="cursor: pointer" *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+    <button mat-icon-button
+            [attr.aria-label]="'Toggle ' + node.item" matTreeNodeToggle>
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{getTreeControl().isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    {{node.item}}
+    <mat-progress-bar *ngIf="node.isLoading"
+                      mode="indeterminate"
+                      class="example-tree-progress-bar"></mat-progress-bar>
+  </mat-tree-node>
+</mat-tree>
